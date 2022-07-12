@@ -43,3 +43,20 @@ function saveRecord(record) {
     // add record to your store with add method
     budgetObjectStore.add(record);
 };
+
+function uploadTransaction() {
+
+    // open a transaction on your db
+    const transaction = db.transaction(['new_transaction'], 'readwrite');
+  
+    // access your object store
+    const budgetObjectStore = transaction.objectStore('new_transaction');
+  
+    // get all records from store and set to a variable
+    const getAll = budgetObjectStore.getAll();
+
+
+    // getAll.onsuccess = function() {
+
+    // if there was data in indexedDb's store send it to the api server
+    }
